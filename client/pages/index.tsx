@@ -34,7 +34,7 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8080?name=" + user);
+    const ws = new WebSocket(`${process.env.WS_SERVER}?name=` + user);
 
     ws.onopen = () => {
       setConnected(true);
